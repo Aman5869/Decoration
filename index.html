@@ -1,0 +1,1999 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahadev Decoration - Professional Event Decoration Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .heading-font {
+        font-family: "Playfair Display", serif;
+      }
+
+      .gold-gradient {
+        background: linear-gradient(135deg, #f9d976 0%, #f39f86 100%);
+      }
+
+      .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+
+      .lightbox-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        animation: zoom 0.3s;
+      }
+
+      @keyframes zoom {
+        from {
+          transform: scale(0.8);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .service-modal,
+      .booking-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        animation: fadeIn 0.3s;
+      }
+
+      .service-modal-content,
+      .booking-modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 800px;
+        animation: slideUp 0.4s;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .booking-modal-content {
+        max-width: 600px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        box-shadow: 3px 3px 5px #666;
+      }
+
+      .mobile-menu {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .mobile-menu.open {
+        transform: translateX(0);
+      }
+
+      .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+      }
+
+      .testimonial-card {
+        transition: transform 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .team-card {
+        transition: transform 0.3s ease;
+      }
+
+      .team-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-card {
+        transition: all 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow:
+          0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .booking-step {
+        display: none;
+      }
+
+      .booking-step.active {
+        display: block;
+      }
+
+      .progress-bar {
+        height: 5px;
+        background-color: #e5e7eb;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+
+      .progress {
+        height: 100%;
+        background-color: #d97706;
+        border-radius: 5px;
+        transition: width 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Header & Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <div
+            class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center mr-3"
+          >
+            <i class="fas fa-gem text-white"></i>
+          </div>
+          <h1 class="heading-font text-2xl font-bold text-amber-800">
+            Mahadev Decoration
+          </h1>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          <a
+            href="#home"
+            class="text-amber-800 hover:text-amber-600 font-medium transition duration-300"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="text-amber-800 hover:text-amber-600 font-medium transition duration-300"
+            >Services</a
+          >
+          <a
+            href="#gallery"
+            class="text-amber-800 hover:text-amber-600 font-medium transition duration-300"
+            >Gallery</a
+          >
+          <a
+            href="#team"
+            class="text-amber-800 hover:text-amber-600 font-medium transition duration-300"
+            >Our Team</a
+          >
+          <a
+            href="#testimonials"
+            class="text-amber-800 hover:text-amber-600 font-medium transition duration-300"
+            >Testimonials</a
+          >
+          <a
+            href="#catalog"
+            class="text-amber-800 hover:text-amber-600 font-medium transition duration-300"
+            >Catalog</a
+          >
+          <a
+            href="#about"
+            class="text-amber-800 hover:text-amber-600 font-medium transition duration-300"
+            >About</a
+          >
+          <a
+            href="#contact"
+            class="text-amber-800 hover:text-amber-600 font-medium transition duration-300"
+            >Contact</a
+          >
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-amber-800">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        id="mobile-menu"
+        class="mobile-menu fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 md:hidden"
+      >
+        <div class="p-4 border-b border-amber-100">
+          <div class="flex items-center">
+            <div
+              class="w-8 h-8 rounded-full gold-gradient flex items-center justify-center mr-2"
+            >
+              <i class="fas fa-gem text-white text-sm"></i>
+            </div>
+            <h2 class="heading-font text-xl font-bold text-amber-800">
+              Mahadev Decoration
+            </h2>
+          </div>
+          <button id="close-menu" class="absolute top-4 right-4 text-amber-800">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <nav class="flex flex-col p-4 space-y-4">
+          <a
+            href="#home"
+            class="text-amber-800 hover:text-amber-600 font-medium py-2"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="text-amber-800 hover:text-amber-600 font-medium py-2"
+            >Services</a
+          >
+          <a
+            href="#gallery"
+            class="text-amber-800 hover:text-amber-600 font-medium py-2"
+            >Gallery</a
+          >
+          <a
+            href="#team"
+            class="text-amber-800 hover:text-amber-600 font-medium py-2"
+            >Our Team</a
+          >
+          <a
+            href="#testimonials"
+            class="text-amber-800 hover:text-amber-600 font-medium py-2"
+            >Testimonials</a
+          >
+          <a
+            href="#catalog"
+            class="text-amber-800 hover:text-amber-600 font-medium py-2"
+            >Catalog</a
+          >
+          <a
+            href="#about"
+            class="text-amber-800 hover:text-amber-600 font-medium py-2"
+            >About</a
+          >
+          <a
+            href="#contact"
+            class="text-amber-800 hover:text-amber-600 font-medium py-2"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      <video autoplay muted loop class="video-background">
+        <source src="decoration.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay"></div>
+      <div class="text-center text-white px-4 max-w-3xl z-10">
+        <h2 class="heading-font text-4xl md:text-6xl font-bold mb-6">
+          We Create Your Moments Beautiful
+        </h2>
+        <p class="text-xl md:text-2xl mb-8">
+          Professional Decoration Services in Delhi, Noida & Chandigarh
+        </p>
+        <button
+          id="explore-services"
+          class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105"
+        >
+          Explore Services
+        </button>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-amber-50">
+      <div class="container mx-auto px-4">
+        <h2
+          class="heading-font text-3xl md:text-4xl font-bold text-center text-amber-800 mb-12"
+        >
+          Our Services
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service Cards -->
+          <div
+            class="service-card bg-white rounded-xl shadow-md overflow-hidden cursor-pointer"
+            data-service="stage"
+          >
+            <div
+              class="h-48 bg-cover bg-center"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80&quot;);
+              "
+            ></div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center mr-3"
+                >
+                  <i class="fas fa-theater-masks text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-amber-800">
+                  Stage Decoration
+                </h3>
+              </div>
+              <p class="text-gray-600">
+                Elegant and stunning stage setups for weddings, corporate
+                events, and celebrations.
+              </p>
+              <button class="mt-4 text-amber-600 font-medium flex items-center">
+                View Details <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="service-card bg-white rounded-xl shadow-md overflow-hidden cursor-pointer"
+            data-service="balloon"
+          >
+            <div
+              class="h-48 bg-cover bg-center"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1989&q=80&quot;);
+              "
+            ></div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center mr-3"
+                >
+                  <i class="fas fa-birthday-cake text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-amber-800">
+                  Balloon Decoration
+                </h3>
+              </div>
+              <p class="text-gray-600">
+                Creative balloon arrangements for birthdays, anniversaries, and
+                special occasions.
+              </p>
+              <button class="mt-4 text-amber-600 font-medium flex items-center">
+                View Details <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="service-card bg-white rounded-xl shadow-md overflow-hidden cursor-pointer"
+            data-service="wedding"
+          >
+            <div
+              class="h-48 bg-cover bg-center"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80&quot;);
+              "
+            ></div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center mr-3"
+                >
+                  <i class="fas fa-ring text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-amber-800">
+                  Wedding Draping
+                </h3>
+              </div>
+              <p class="text-gray-600">
+                Exquisite fabric draping to transform wedding venues into dream
+                spaces.
+              </p>
+              <button class="mt-4 text-amber-600 font-medium flex items-center">
+                View Details <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="service-card bg-white rounded-xl shadow-md overflow-hidden cursor-pointer"
+            data-service="corporate"
+          >
+            <div
+              class="h-48 bg-cover bg-center"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80&quot;);
+              "
+            ></div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center mr-3"
+                >
+                  <i class="fas fa-briefcase text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-amber-800">
+                  Corporate Events
+                </h3>
+              </div>
+              <p class="text-gray-600">
+                Professional setups for conferences, product launches, and
+                corporate gatherings.
+              </p>
+              <button class="mt-4 text-amber-600 font-medium flex items-center">
+                View Details <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="service-card bg-white rounded-xl shadow-md overflow-hidden cursor-pointer"
+            data-service="birthday"
+          >
+            <div
+              class="h-48 bg-cover bg-center"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80&quot;);
+              "
+            ></div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center mr-3"
+                >
+                  <i class="fas fa-gift text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-amber-800">
+                  Birthday Party Setup
+                </h3>
+              </div>
+              <p class="text-gray-600">
+                Fun and vibrant decorations for birthday parties of all ages.
+              </p>
+              <button class="mt-4 text-amber-600 font-medium flex items-center">
+                View Details <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="service-card bg-white rounded-xl shadow-md overflow-hidden cursor-pointer"
+            data-service="floral"
+          >
+            <div
+              class="h-48 bg-cover bg-center"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80&quot;);
+              "
+            ></div>
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center mr-3"
+                >
+                  <i class="fas fa-spa text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-amber-800">
+                  Floral Decoration
+                </h3>
+              </div>
+              <p class="text-gray-600">
+                Beautiful floral arrangements to add natural elegance to any
+                event.
+              </p>
+              <button class="mt-4 text-amber-600 font-medium flex items-center">
+                View Details <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Modal -->
+    <div id="service-modal" class="service-modal">
+      <div class="service-modal-content">
+        <span
+          class="close-service-modal text-amber-800 float-right text-3xl cursor-pointer"
+          >&times;</span
+        >
+        <div id="service-content">
+          <!-- Dynamic content will be inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2
+          class="heading-font text-3xl md:text-4xl font-bold text-center text-amber-800 mb-12"
+        >
+          Our Gallery
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Gallery Images -->
+          <div
+            class="gallery-item overflow-hidden rounded-xl shadow-md transition duration-300 transform hover:scale-105 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              alt="Wedding Decoration"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item overflow-hidden rounded-xl shadow-md transition duration-300 transform hover:scale-105 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Birthday Decoration"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item overflow-hidden rounded-xl shadow-md transition duration-300 transform hover:scale-105 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Corporate Event"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item overflow-hidden rounded-xl shadow-md transition duration-300 transform hover:scale-105 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Wedding Stage"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item overflow-hidden rounded-xl shadow-md transition duration-300 transform hover:scale-105 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1989&q=80"
+              alt="Balloon Decoration"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+
+          <div
+            class="gallery-item overflow-hidden rounded-xl shadow-md transition duration-300 transform hover:scale-105 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              alt="Stage Setup"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-16 bg-amber-50">
+      <div class="container mx-auto px-4">
+        <h2
+          class="heading-font text-3xl md:text-4xl font-bold text-center text-amber-800 mb-12"
+        >
+          Our Team
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Team Members -->
+          <div
+            class="team-card bg-white rounded-xl shadow-md overflow-hidden text-center p-6"
+          >
+            <div
+              class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-amber-200"
+            >
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Satish Pandey"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-amber-800">Satish Pandey</h3>
+            <p class="text-amber-600 font-medium mb-2">Owner & Founder</p>
+            <p class="text-gray-600 text-sm">
+              With over 12 years of experience in event decoration, Satish leads
+              our team with creativity and passion.
+            </p>
+            <div class="flex justify-center mt-4 space-x-3">
+              <a href="#" class="text-amber-600 hover:text-amber-800"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-amber-600 hover:text-amber-800"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-amber-600 hover:text-amber-800"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div
+            class="team-card bg-white rounded-xl shadow-md overflow-hidden text-center p-6"
+          >
+            <div
+              class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-amber-200"
+            >
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Priya Sharma"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-amber-800">Priya Sharma</h3>
+            <p class="text-amber-600 font-medium mb-2">Creative Director</p>
+            <p class="text-gray-600 text-sm">
+              Priya brings innovative design concepts and ensures every event
+              has a unique and beautiful aesthetic.
+            </p>
+            <div class="flex justify-center mt-4 space-x-3">
+              <a href="#" class="text-amber-600 hover:text-amber-800"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-amber-600 hover:text-amber-800"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-amber-600 hover:text-amber-800"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div
+            class="team-card bg-white rounded-xl shadow-md overflow-hidden text-center p-6"
+          >
+            <div
+              class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-amber-200"
+            >
+              <img
+                src="https://randomuser.me/api/portraits/men/67.jpg"
+                alt="Rahul Verma"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-amber-800">Aman Pandey</h3>
+            <p class="text-amber-600 font-medium mb-2">Software Engineer</p>
+            <p class="text-gray-600 text-sm">
+              Aman supports the team with technical expertise and ensures
+              seamless integration of modern solutions.
+            </p>
+            <div class="flex justify-center mt-4 space-x-3">
+              <a href="#" class="text-amber-600 hover:text-amber-800"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-amber-600 hover:text-amber-800"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-amber-600 hover:text-amber-800"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div
+            class="team-card bg-white rounded-xl shadow-md overflow-hidden text-center p-6"
+          >
+            <div
+              class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-amber-200"
+            >
+              <img
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Anjali Singh"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-bold text-amber-800">Anjali Singh</h3>
+            <p class="text-amber-600 font-medium mb-2">Client Relations</p>
+            <p class="text-gray-600 text-sm">
+              Anjali works closely with clients to understand their vision and
+              ensure their complete satisfaction.
+            </p>
+            <div class="flex justify-center mt-4 space-x-3">
+              <a href="#" class="text-amber-600 hover:text-amber-800"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-amber-600 hover:text-amber-800"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-amber-600 hover:text-amber-800"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2
+          class="heading-font text-3xl md:text-4xl font-bold text-center text-amber-800 mb-12"
+        >
+          What Our Clients Say
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial Cards -->
+          <div class="testimonial-card bg-amber-50 rounded-xl shadow-md p-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                <img
+                  src="https://randomuser.me/api/portraits/women/32.jpg"
+                  alt="Client"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="font-bold text-amber-800">Neha Gupta</h4>
+                <div class="flex text-amber-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "Mahadev Decoration transformed our wedding venue into a dream!
+              The stage decoration was absolutely stunning. Highly recommended!"
+            </p>
+          </div>
+
+          <div class="testimonial-card bg-amber-50 rounded-xl shadow-md p-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                <img
+                  src="https://randomuser.me/api/portraits/men/54.jpg"
+                  alt="Client"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="font-bold text-amber-800">Rajesh Kumar</h4>
+                <div class="flex text-amber-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "We hired Mahadev Decoration for our corporate event. The team was
+              professional, creative, and delivered beyond our expectations."
+            </p>
+          </div>
+
+          <div class="testimonial-card bg-amber-50 rounded-xl shadow-md p-6">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                <img
+                  src="https://randomuser.me/api/portraits/women/76.jpg"
+                  alt="Client"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="font-bold text-amber-800">Sunita Mehta</h4>
+                <div class="flex text-amber-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "The balloon decoration for my daughter's birthday was fantastic!
+              The kids loved it, and the setup was done quickly and
+              efficiently."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox for Gallery -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+    </div>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="py-16 bg-amber-50">
+      <div class="container mx-auto px-4">
+        <h2
+          class="heading-font text-3xl md:text-4xl font-bold text-center text-amber-800 mb-12"
+        >
+          Our Catalog
+        </h2>
+
+        <div
+          class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden"
+        >
+          <div class="md:flex">
+            <div class="md:w-1/2 p-8">
+              <h3 class="heading-font text-2xl font-bold text-amber-800 mb-4">
+                Event Decoration Portfolio
+              </h3>
+              <p class="text-gray-600 mb-6">
+                Browse through our extensive collection of decoration themes and
+                setups for weddings, corporate events, birthdays, and more.
+              </p>
+              <p class="text-gray-600 mb-8">
+                Our catalog showcases our best work and creative ideas to make
+                your event truly memorable.
+              </p>
+
+              <div class="flex space-x-4">
+                <button
+                  id="view-catalog"
+                  class="inline-flex items-center bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-full transition duration-300"
+                >
+                  <i class="fas fa-eye mr-2"></i> View Online
+                </button>
+                <button
+                  class="inline-flex items-center bg-white border border-amber-600 text-amber-600 hover:bg-amber-50 font-bold py-3 px-6 rounded-full transition duration-300"
+                >
+                  <i class="fas fa-download mr-2"></i> Download PDF
+                </button>
+              </div>
+            </div>
+            <div class="md:w-1/2">
+              <div
+                class="h-full bg-cover bg-center"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80&quot;);
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="heading-font text-3xl md:text-4xl font-bold text-center text-amber-800 mb-12"
+          >
+            About Mahadev Decoration
+          </h2>
+
+          <div class="md:flex items-center">
+            <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+              <div
+                class="w-48 h-48 rounded-full overflow-hidden border-4 border-amber-200 shadow-lg"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="Mahadev Decoration Team"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div class="md:w-2/3 md:pl-12">
+              <p class="text-gray-600 mb-6 text-lg">
+                Mahadev Decoration is a premier event decoration company with
+                over a decade of experience in creating magical and memorable
+                settings for all types of celebrations.
+              </p>
+              <p class="text-gray-600 mb-6 text-lg">
+                Founded in 2013, we have been serving clients across Delhi,
+                Noida, and Chandigarh with our creative designs and impeccable
+                execution.
+              </p>
+              <div
+                class="bg-amber-50 p-6 rounded-xl border-l-4 border-amber-600"
+              >
+                <p class="text-amber-800 font-bold text-lg">
+                  <i class="fas fa-award text-amber-600 mr-2"></i> 10+ years of
+                  experience in event decoration across Delhi, Noida, and
+                  Chandigarh
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-amber-50">
+      <div class="container mx-auto px-4">
+        <h2
+          class="heading-font text-3xl md:text-4xl font-bold text-center text-amber-800 mb-12"
+        >
+          Contact Us
+        </h2>
+
+        <div class="max-w-6xl mx-auto">
+          <div class="md:flex md:space-x-8">
+            <!-- Contact Form -->
+            <div class="md:w-1/2 mb-12 md:mb-0">
+              <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-amber-800 mb-6">
+                  Get In Touch
+                </h3>
+                <form id="contact-form">
+                  <div class="mb-4">
+                    <label for="name" class="block text-gray-700 mb-2"
+                      >Full Name</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                      required
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label for="phone" class="block text-gray-700 mb-2"
+                      >Phone Number</label
+                    >
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                      required
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label for="email" class="block text-gray-700 mb-2"
+                      >Email Address</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                      required
+                    />
+                  </div>
+                  <div class="mb-6">
+                    <label for="message" class="block text-gray-700 mb-2"
+                      >Your Message</label
+                    >
+                    <textarea
+                      id="message"
+                      rows="5"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Map and Contact Info -->
+            <div class="md:w-1/2">
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.366391536891!2d77.28743297538765!3d28.62162007567325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfcad7d5c52a9%3A0x7a8e9e8e6d5d5b1e!2sPandav%20Nagar%2C%20Akshardham%2C%20New%20Delhi%2C%20Delhi%20110092!5e0!3m2!1sen!2sin!4v1690456789012!5m2!1sen!2sin"
+                  width="100%"
+                  height="300"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+
+              <div class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-xl font-bold text-amber-800 mb-4">
+                  Contact Information
+                </h3>
+                <div class="space-y-4">
+                  <div class="flex items-start">
+                    <i
+                      class="fas fa-map-marker-alt text-amber-600 mt-1 mr-3"
+                    ></i>
+                    <p class="text-gray-600">
+                      Pandav Nagar, Akshardham, New Delhi, Delhi 110092
+                    </p>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-phone text-amber-600 mr-3"></i>
+                    <p class="text-gray-600">+91 93241 19131</p>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-envelope text-amber-600 mr-3"></i>
+                    <p class="text-gray-600">amanpandeymca007@gmail.com</p>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-clock text-amber-600 mr-3"></i>
+                    <p class="text-gray-600">Mon - Sun: 9:00 AM - 9:00 PM</p>
+                  </div>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                  <h4 class="text-lg font-bold text-amber-800 mb-3">
+                    Follow Us
+                  </h4>
+                  <div class="flex space-x-4">
+                    <a
+                      href="#"
+                      class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 hover:bg-amber-600 hover:text-white transition duration-300"
+                    >
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 hover:bg-amber-600 hover:text-white transition duration-300"
+                    >
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 hover:bg-amber-600 hover:text-white transition duration-300"
+                    >
+                      <i class="fab fa-whatsapp"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="booking-modal">
+      <div class="booking-modal-content">
+        <span
+          class="close-booking-modal text-amber-800 float-right text-3xl cursor-pointer"
+          >&times;</span
+        >
+        <h2 class="heading-font text-2xl font-bold text-amber-800 mb-6">
+          Book Our Services
+        </h2>
+
+        <div class="progress-bar">
+          <div id="booking-progress" class="progress" style="width: 33%"></div>
+        </div>
+
+        <form id="booking-form">
+          <!-- Step 1: Service Selection -->
+          <div id="step-1" class="booking-step active">
+            <h3 class="text-xl font-bold text-amber-800 mb-4">
+              Select Service
+            </h3>
+            <div class="space-y-4 mb-6">
+              <div class="flex items-center">
+                <input
+                  type="radio"
+                  id="service-stage"
+                  name="service"
+                  value="Stage Decoration"
+                  class="mr-3"
+                  checked
+                />
+                <label for="service-stage" class="text-gray-700"
+                  >Stage Decoration</label
+                >
+              </div>
+              <div class="flex items-center">
+                <input
+                  type="radio"
+                  id="service-balloon"
+                  name="service"
+                  value="Balloon Decoration"
+                  class="mr-3"
+                />
+                <label for="service-balloon" class="text-gray-700"
+                  >Balloon Decoration</label
+                >
+              </div>
+              <div class="flex items-center">
+                <input
+                  type="radio"
+                  id="service-wedding"
+                  name="service"
+                  value="Wedding Draping"
+                  class="mr-3"
+                />
+                <label for="service-wedding" class="text-gray-700"
+                  >Wedding Draping</label
+                >
+              </div>
+              <div class="flex items-center">
+                <input
+                  type="radio"
+                  id="service-corporate"
+                  name="service"
+                  value="Corporate Events"
+                  class="mr-3"
+                />
+                <label for="service-corporate" class="text-gray-700"
+                  >Corporate Events</label
+                >
+              </div>
+              <div class="flex items-center">
+                <input
+                  type="radio"
+                  id="service-birthday"
+                  name="service"
+                  value="Birthday Party Setup"
+                  class="mr-3"
+                />
+                <label for="service-birthday" class="text-gray-700"
+                  >Birthday Party Setup</label
+                >
+              </div>
+              <div class="flex items-center">
+                <input
+                  type="radio"
+                  id="service-floral"
+                  name="service"
+                  value="Floral Decoration"
+                  class="mr-3"
+                />
+                <label for="service-floral" class="text-gray-700"
+                  >Floral Decoration</label
+                >
+              </div>
+            </div>
+            <div class="flex justify-between">
+              <button
+                type="button"
+                class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded-lg transition duration-300"
+                disabled
+              >
+                Previous
+              </button>
+              <button
+                type="button"
+                class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 next-step"
+                data-next="2"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Event Details -->
+          <div id="step-2" class="booking-step">
+            <h3 class="text-xl font-bold text-amber-800 mb-4">Event Details</h3>
+            <div class="space-y-4 mb-6">
+              <div>
+                <label for="event-type" class="block text-gray-700 mb-2"
+                  >Event Type</label
+                >
+                <select
+                  id="event-type"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  required
+                >
+                  <option value="">Select Event Type</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Birthday">Birthday</option>
+                  <option value="Anniversary">Anniversary</option>
+                  <option value="Corporate">Corporate Event</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="event-date" class="block text-gray-700 mb-2"
+                  >Event Date</label
+                >
+                <input
+                  type="date"
+                  id="event-date"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  required
+                />
+              </div>
+              <div>
+                <label for="guest-count" class="block text-gray-700 mb-2"
+                  >Approximate Guest Count</label
+                >
+                <input
+                  type="number"
+                  id="guest-count"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  required
+                />
+              </div>
+              <div>
+                <label for="venue" class="block text-gray-700 mb-2"
+                  >Venue Address</label
+                >
+                <textarea
+                  id="venue"
+                  rows="3"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="flex justify-between">
+              <button
+                type="button"
+                class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded-lg transition duration-300 prev-step"
+                data-prev="1"
+              >
+                Previous
+              </button>
+              <button
+                type="button"
+                class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 next-step"
+                data-next="3"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Personal Details & Payment -->
+          <div id="step-3" class="booking-step">
+            <h3 class="text-xl font-bold text-amber-800 mb-4">
+              Personal Details & Payment
+            </h3>
+            <div class="space-y-4 mb-6">
+              <div>
+                <label for="booking-name" class="block text-gray-700 mb-2"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="booking-name"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  required
+                />
+              </div>
+              <div>
+                <label for="booking-phone" class="block text-gray-700 mb-2"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  id="booking-phone"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  required
+                />
+              </div>
+              <div>
+                <label for="booking-email" class="block text-gray-700 mb-2"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="booking-email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  required
+                />
+              </div>
+              <div class="bg-amber-50 p-4 rounded-lg">
+                <p class="text-amber-800 font-bold mb-2">Payment Information</p>
+                <p class="text-gray-600 text-sm mb-2">
+                  To confirm your booking, a 50% advance payment is required.
+                </p>
+                <p class="text-gray-600 text-sm">
+                  The remaining 50% should be paid on the event day.
+                </p>
+              </div>
+              <div>
+                <label for="payment-method" class="block text-gray-700 mb-2"
+                  >Payment Method</label
+                >
+                <select
+                  id="payment-method"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  required
+                >
+                  <option value="">Select Payment Method</option>
+                  <option value="UPI">UPI</option>
+                  <option value="Bank Transfer">Bank Transfer</option>
+                  <option value="Cash">Cash</option>
+                </select>
+              </div>
+            </div>
+            <div class="flex justify-between">
+              <button
+                type="button"
+                class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded-lg transition duration-300 prev-step"
+                data-prev="2"
+              >
+                Previous
+              </button>
+              <button
+                type="submit"
+                class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/9324119131" class="whatsapp-float" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-amber-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="md:flex md:justify-between">
+          <div class="mb-8 md:mb-0">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center mr-3"
+              >
+                <i class="fas fa-gem text-white"></i>
+              </div>
+              <h3 class="heading-font text-2xl font-bold">
+                Mahadev Decoration
+              </h3>
+            </div>
+            <p class="text-amber-100 max-w-md">
+              Creating beautiful moments with professional decoration services
+              in Delhi, Noida & Chandigarh for over 10 years.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+              <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#home"
+                    class="text-amber-100 hover:text-white transition duration-300"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    class="text-amber-100 hover:text-white transition duration-300"
+                    >Services</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#gallery"
+                    class="text-amber-100 hover:text-white transition duration-300"
+                    >Gallery</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#team"
+                    class="text-amber-100 hover:text-white transition duration-300"
+                    >Our Team</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#testimonials"
+                    class="text-amber-100 hover:text-white transition duration-300"
+                    >Testimonials</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#catalog"
+                    class="text-amber-100 hover:text-white transition duration-300"
+                    >Catalog</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#about"
+                    class="text-amber-100 hover:text-white transition duration-300"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    class="text-amber-100 hover:text-white transition duration-300"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-bold mb-4">Services</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    class="text-amber-100 hover:text-white transition duration-300 service-link"
+                    data-service="stage"
+                    >Stage Decoration</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-amber-100 hover:text-white transition duration-300 service-link"
+                    data-service="wedding"
+                    >Wedding Draping</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-amber-100 hover:text-white transition duration-300 service-link"
+                    data-service="corporate"
+                    >Corporate Events</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-amber-100 hover:text-white transition duration-300 service-link"
+                    data-service="birthday"
+                    >Birthday Parties</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-amber-100 hover:text-white transition duration-300 service-link"
+                    data-service="floral"
+                    >Floral Decoration</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-amber-100 hover:text-white transition duration-300 service-link"
+                    data-service="balloon"
+                    >Balloon Decoration</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-lg font-bold mb-4">Connect</h4>
+              <div class="flex space-x-4 mb-4">
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full bg-amber-700 flex items-center justify-center text-white hover:bg-amber-600 transition duration-300"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full bg-amber-700 flex items-center justify-center text-white hover:bg-amber-600 transition duration-300"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full bg-amber-700 flex items-center justify-center text-white hover:bg-amber-600 transition duration-300"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+              </div>
+              <p class="text-amber-100">amanpandeymca007@gmail.com</p>
+              <p class="text-amber-100">+91 93241 19131</p>
+              <button
+                id="book-now-footer"
+                class="mt-4 bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-amber-700 mt-8 pt-8 text-center text-amber-200"
+        >
+          <p>Copyright © 2025 Mahadev Decoration. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeMenuButton = document.getElementById("close-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.add("open");
+      });
+
+      closeMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+        });
+      });
+
+      // Service Modal Functionality
+      const serviceCards = document.querySelectorAll(".service-card");
+      const serviceModal = document.getElementById("service-modal");
+      const closeServiceModal = document.querySelector(".close-service-modal");
+      const serviceContent = document.getElementById("service-content");
+      const serviceLinks = document.querySelectorAll(".service-link");
+
+      // Service data
+      const servicesData = {
+        stage: {
+          title: "Stage Decoration",
+          description:
+            "Our stage decoration services transform ordinary stages into breathtaking backdrops for your special events. We specialize in creating stunning setups for weddings, corporate events, cultural programs, and celebrations of all kinds. Using premium fabrics, elegant lighting, and creative design elements, we ensure your stage becomes the centerpiece of your event.",
+          images: [
+            "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+            "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+            "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+          ],
+          price: "Starting from ₹15,000",
+        },
+        balloon: {
+          title: "Balloon Decoration",
+          description:
+            "Add color and fun to your celebrations with our creative balloon decorations. We design beautiful balloon arches, centerpieces, columns, and themed installations for birthdays, anniversaries, baby showers, and corporate events. Using high-quality balloons and innovative techniques, we create stunning visual effects that delight guests of all ages.",
+          images: [
+            "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1989&q=80",
+            "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+          ],
+          price: "Starting from ₹8,000",
+        },
+        wedding: {
+          title: "Wedding Draping",
+          description:
+            "Create the wedding of your dreams with our exquisite fabric draping services. We transform wedding venues into enchanting spaces using luxurious fabrics, elegant lighting, and creative design elements. From mandap decorations to reception backdrops, we pay attention to every detail to ensure your wedding venue reflects your unique style and vision.",
+          images: [
+            "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+            "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+          ],
+          price: "Starting from ₹25,000",
+        },
+        corporate: {
+          title: "Corporate Events",
+          description:
+            "Make a professional statement with our corporate event decoration services. We create sophisticated and brand-appropriate setups for conferences, product launches, annual meetings, and corporate celebrations. Our team understands the importance of creating the right ambiance for business events while maintaining a professional and polished look.",
+          images: [
+            "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+            "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+          ],
+          price: "Starting from ₹20,000",
+        },
+        birthday: {
+          title: "Birthday Party Setup",
+          description:
+            "Celebrate in style with our fun and vibrant birthday party decorations. We create age-appropriate themes and setups that make birthdays truly special. From children's parties with colorful themes to elegant adult celebrations, we design decorations that reflect the personality of the birthday person and create a festive atmosphere for all guests.",
+          images: [
+            "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1989&q=80",
+            "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+          ],
+          price: "Starting from ₹10,000",
+        },
+        floral: {
+          title: "Floral Decoration",
+          description:
+            "Add natural beauty and elegance to your events with our floral decoration services. We create stunning floral arrangements using fresh, high-quality flowers that complement your event theme and color scheme. From centerpieces and bouquets to elaborate floral installations, our designs bring a touch of nature's beauty to your celebrations.",
+          images: [
+            "https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80",
+            "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+            "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+          ],
+          price: "Starting from ₹12,000",
+        },
+      };
+
+      // Function to open service modal
+      function openServiceModal(serviceType) {
+        const service = servicesData[serviceType];
+
+        if (service) {
+          serviceContent.innerHTML = `
+                    <h3 class="heading-font text-2xl font-bold text-amber-800 mb-4">${service.title}</h3>
+                    <p class="text-gray-600 mb-6">${service.description}</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        ${service.images
+                          .map(
+                            (img) => `
+                            <div class="overflow-hidden rounded-lg">
+                                <img src="${img}" alt="${service.title}" class="w-full h-40 object-cover transition duration-300 hover:scale-110 cursor-pointer gallery-image">
+                            </div>
+                        `,
+                          )
+                          .join("")}
+                    </div>
+                    
+                    <div class="bg-amber-50 p-4 rounded-lg mb-6">
+                        <p class="text-amber-800 font-bold">${service.price}</p>
+                        <p class="text-gray-600 text-sm mt-1">50% advance payment required for booking confirmation</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="book-service bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition duration-300" data-service="${serviceType}">
+                            Book Now
+                        </button>
+                    </div>
+                `;
+
+          serviceModal.style.display = "block";
+
+          // Add event listeners to gallery images in modal
+          const galleryImages = document.querySelectorAll(".gallery-image");
+          galleryImages.forEach((img) => {
+            img.addEventListener("click", () => {
+              lightbox.style.display = "block";
+              lightboxImg.src = img.src;
+            });
+          });
+
+          // Add event listener to book service button
+          const bookServiceBtn = document.querySelector(".book-service");
+          bookServiceBtn.addEventListener("click", () => {
+            serviceModal.style.display = "none";
+            openBookingModal(serviceType);
+          });
+        }
+      }
+
+      // Open service modal when a service card is clicked
+      serviceCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          const serviceType = card.getAttribute("data-service");
+          openServiceModal(serviceType);
+        });
+      });
+
+      // Open service modal when service link in footer is clicked
+      serviceLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const serviceType = link.getAttribute("data-service");
+          openServiceModal(serviceType);
+        });
+      });
+
+      // Close service modal
+      closeServiceModal.addEventListener("click", () => {
+        serviceModal.style.display = "none";
+      });
+
+      // Gallery Lightbox
+      const galleryItems = document.querySelectorAll(".gallery-item img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeLightbox = document.querySelector(".close");
+
+      galleryItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          lightbox.style.display = "block";
+          lightboxImg.src = item.src;
+        });
+      });
+
+      closeLightbox.addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
+
+      // Contact Form Submission
+      const contactForm = document.getElementById("contact-form");
+
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // In a real application, you would send this data to a server
+        // For this example, we'll just show an alert
+        alert(
+          `Thank you ${name}! Your message has been received. We will contact you at ${phone} or ${email} soon.`,
+        );
+
+        // Reset form
+        contactForm.reset();
+      });
+
+      // Booking Modal Functionality
+      const bookingModal = document.getElementById("booking-modal");
+      const closeBookingModal = document.querySelector(".close-booking-modal");
+      const bookingForm = document.getElementById("booking-form");
+      const bookNowFooter = document.getElementById("book-now-footer");
+      const exploreServicesBtn = document.getElementById("explore-services");
+      const viewCatalogBtn = document.getElementById("view-catalog");
+      const bookingProgress = document.getElementById("booking-progress");
+
+      // Open booking modal
+      function openBookingModal(serviceType = null) {
+        bookingModal.style.display = "block";
+
+        // Set the service if provided
+        if (serviceType) {
+          const serviceRadio = document.getElementById(
+            `service-${serviceType}`,
+          );
+          if (serviceRadio) {
+            serviceRadio.checked = true;
+          }
+        }
+
+        // Reset to step 1
+        showBookingStep(1);
+      }
+
+      // Close booking modal
+      closeBookingModal.addEventListener("click", () => {
+        bookingModal.style.display = "none";
+      });
+
+      // Book Now button in footer
+      bookNowFooter.addEventListener("click", () => {
+        openBookingModal();
+      });
+
+      // Explore Services button
+      exploreServicesBtn.addEventListener("click", () => {
+        document
+          .getElementById("services")
+          .scrollIntoView({ behavior: "smooth" });
+      });
+
+      // View Catalog button
+      viewCatalogBtn.addEventListener("click", () => {
+        alert(
+          "Catalog viewing feature would be implemented here. In a real application, this would open a PDF or image gallery.",
+        );
+      });
+
+      // Booking form step navigation
+      function showBookingStep(stepNumber) {
+        // Hide all steps
+        document.querySelectorAll(".booking-step").forEach((step) => {
+          step.classList.remove("active");
+        });
+
+        // Show the selected step
+        document.getElementById(`step-${stepNumber}`).classList.add("active");
+
+        // Update progress bar
+        const progressPercentage = (stepNumber / 3) * 100;
+        bookingProgress.style.width = `${progressPercentage}%`;
+      }
+
+      // Next step buttons
+      document.querySelectorAll(".next-step").forEach((button) => {
+        button.addEventListener("click", () => {
+          const nextStep = button.getAttribute("data-next");
+          showBookingStep(parseInt(nextStep));
+        });
+      });
+
+      // Previous step buttons
+      document.querySelectorAll(".prev-step").forEach((button) => {
+        button.addEventListener("click", () => {
+          const prevStep = button.getAttribute("data-prev");
+          showBookingStep(parseInt(prevStep));
+        });
+      });
+
+      // Booking form submission
+      bookingForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Get form values
+        const service = document.querySelector(
+          'input[name="service"]:checked',
+        ).value;
+        const eventType = document.getElementById("event-type").value;
+        const eventDate = document.getElementById("event-date").value;
+        const guestCount = document.getElementById("guest-count").value;
+        const venue = document.getElementById("venue").value;
+        const name = document.getElementById("booking-name").value;
+        const phone = document.getElementById("booking-phone").value;
+        const email = document.getElementById("booking-email").value;
+        const paymentMethod = document.getElementById("payment-method").value;
+
+        // In a real application, you would send this data to a server
+        // and send confirmation emails to both admin and customer
+
+        // Show success message
+        alert(
+          `Thank you ${name}! Your booking for ${service} on ${eventDate} has been received. We have sent a confirmation email to ${email}. Please complete the 50% advance payment to confirm your booking.`,
+        );
+
+        // Close modal and reset form
+        bookingModal.style.display = "none";
+        bookingForm.reset();
+        showBookingStep(1);
+
+        // In a real application, you would send emails here
+        // sendConfirmationEmail(name, email, service, eventDate);
+        // sendAdminNotification(name, email, phone, service, eventDate, guestCount, venue);
+      });
+
+      // Function to send confirmation email (conceptual)
+      function sendConfirmationEmail(
+        customerName,
+        customerEmail,
+        service,
+        eventDate,
+      ) {
+        // This would integrate with an email service in a real application
+        console.log(`Sending confirmation email to ${customerEmail}`);
+        // Email content would include booking details and payment instructions
+      }
+
+      // Function to send admin notification (conceptual)
+      function sendAdminNotification(
+        customerName,
+        customerEmail,
+        customerPhone,
+        service,
+        eventDate,
+        guestCount,
+        venue,
+      ) {
+        // This would integrate with an email service in a real application
+        console.log(
+          `Sending admin notification about new booking from ${customerName}`,
+        );
+        // Email content would include all booking details for the admin
+      }
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Close modals when clicking outside
+      window.addEventListener("click", (event) => {
+        if (event.target === serviceModal) {
+          serviceModal.style.display = "none";
+        }
+        if (event.target === bookingModal) {
+          bookingModal.style.display = "none";
+        }
+        if (event.target === lightbox) {
+          lightbox.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
